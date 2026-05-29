@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { 
   Calendar as CalendarIcon, 
   ChevronLeft, 
   ChevronRight, 
   Clock, 
   User, 
-  Stethoscope,
+
   FileText,
   CheckCircle,
   XCircle,
-  AlertCircle,
+
   List,
   Grid
 } from 'lucide-react';
@@ -19,7 +18,6 @@ import { useAuth } from '../../hooks/useAuth';
 import type { Appointment } from '../../types/Appointment';
 
 export const DoctorSchedule: React.FC = () => {
-  const navigate = useNavigate();
   const { user } = useAuth();
   const [appointments, setAppointments] = useState<Appointment[]>([]);
   const [loading, setLoading] = useState(true);

@@ -1,4 +1,4 @@
-import type { QueueEntry, UpdateQueuePositionRequest } from '../types/QueueEntry';
+import type { QueueEntry, } from '../types/QueueEntry.ts';
 import { mockQueueEntries } from './mockData';
 
 // Make a copy of mock data that we can modify

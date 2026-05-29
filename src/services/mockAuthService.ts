@@ -29,7 +29,18 @@ const mockUsers: User[] = [
     fullName: 'System Administrator',
     role: 'ADMIN',  // Now this is valid because we added 'ADMIN' to the type
     isActive: true,
-  },
+  },// Add to mockUsers array:
+{
+  id: 5,
+  username: 'superadmin',
+  fullName: 'Super Administrator',
+  role: 'SUPER_ADMIN',
+  isActive: true,
+  email: 'super@hospital.com',
+  phone: '555-0000',
+  createdAt: new Date().toISOString(),
+},
+
 ];
 
 // Mock tokens
@@ -38,6 +49,7 @@ const mockTokens: Record<string, string> = {
   dr_smith: 'mock-jwt-token-doctor-smith-67890',
   dr_johnson: 'mock-jwt-token-doctor-johnson-11111',
   admin1: 'mock-jwt-token-admin-99999',
+  superadmin: 'mock-jwt-token-superadmin-88888',
 };
 
 export const mockAuthService = {

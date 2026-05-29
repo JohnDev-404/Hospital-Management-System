@@ -26,6 +26,17 @@ export const MainLayout: React.FC = () => {
 
   // Navigation items based on user role
   const getNavItems = () => {
+
+  
+if (user?.role === 'SUPER_ADMIN') {
+  return [
+    { path: '/superadmin/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
+    { path: '/superadmin/users', icon: Users, label: 'User Management' },
+    { path: '/superadmin/system', icon: Settings, label: 'System Settings' },
+  ];
+}
+
+
     if (user?.role === 'ADMIN') {
       return [
         { path: '/admin/dashboard', icon: LayoutDashboard, label: 'Dashboard' },

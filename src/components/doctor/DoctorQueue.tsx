@@ -1,20 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { 
   Users, 
   UserCheck, 
-  UserX, 
   Clock, 
   AlertTriangle,
-  ChevronRight,
   RefreshCw,
   Stethoscope,
   Bell,
   CheckCircle,
   AlertCircle,
   TrendingUp,
-  Phone,
-  Calendar
 } from 'lucide-react';
 import { queueService } from '../../services/queueService';
 import { appointmentService } from '../../services/appointmentService';
@@ -24,7 +19,6 @@ import type { QueueEntry } from '../../types/QueueEntry';
 import type { Appointment } from '../../types/Appointment';
 
 export const DoctorQueue: React.FC = () => {
-  const navigate = useNavigate();
   const { user } = useAuth();
   const [callingPatient, setCallingPatient] = useState(false);
   const [completingPatient, setCompletingPatient] = useState<number | null>(null);
@@ -161,7 +155,6 @@ export const DoctorQueue: React.FC = () => {
 
   const waitingQueue = queue.filter(q => q.status === 'WAITING').sort((a, b) => a.position - b.position);
   const inProgressQueue = queue.filter(q => q.status === 'WITH_DOCTOR');
-  const completedCount = queue.filter(q => q.status === 'COMPLETED').length;
   const completedToday = todayAppointments.filter(a => a.status === 'COMPLETED').length;
   const totalToday = todayAppointments.length;
 

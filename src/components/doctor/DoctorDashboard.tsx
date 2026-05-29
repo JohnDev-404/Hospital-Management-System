@@ -3,10 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { 
   Calendar, 
   Users, 
-  Clock, 
   CheckCircle, 
   Activity,
-  TrendingUp,
   ArrowRight,
   UserCheck,
   Timer,
@@ -261,7 +259,8 @@ export const DoctorDashboard: React.FC = () => {
             </div>
           ) : (
             <div className="space-y-3">
-              {queueList.map((entry, index) => (
+              {queueList.map((entry
+              ) => (
                 <div
                   key={entry.id}
                   className="flex items-center justify-between p-3 bg-gray-50 rounded-lg"
